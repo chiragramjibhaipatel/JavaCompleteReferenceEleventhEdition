@@ -6,7 +6,7 @@ public class ShowFile{
 			System.out.println("Usage: java ShowFile <filename>");
 			return;
 		}
-		try(FileInputStream fin = new FileInputStream(args[0])){
+		try(var fin = new FileInputStream(args[0])){
 			int i;
 		
 			do{
