@@ -6,9 +6,7 @@ public class ShowFile{
 			System.out.println("Usage: java ShowFile <filename>");
 			return;
 		}
-		FileInputStream fin = null;
-		try{
-			fin = new FileInputStream(args[0]);
+		try(FileInputStream fin = new FileInputStream(args[0])){
 			int i;
 		
 			do{
@@ -17,12 +15,6 @@ public class ShowFile{
 			}while(i != -1);
 		} catch (IOException e){
 			System.out.println("Can't read file");
-		} finally {
-			try{
-				if(null != fin) fin.close();
-			} catch(IOException e){
-				System.out.println("Error while closing file" + e);
-			}
 		}
 	}
 }
