@@ -6,7 +6,7 @@ public class ShowFile{
 			System.out.println("Usage: java ShowFile <filename>");
 			return;
 		}
-		final FileInputStream fin;
+		FileInputStream fin;
 		try{
 			fin = new FileInputStream(args[0]);
 		} catch (IOException e){
