@@ -6,10 +6,9 @@ class AssertDemo{
 		return val--;
 	}
 	public static void main(String[] args){
-		int n;
+		int n = 0;
 		for(int i=0; i<10; i++){
-			n = AssertDemo.getVal();
-			assert n > 0;
+			assert (n = getVal()) > 0;
 			System.out.println(n);	
 		}
 	}
