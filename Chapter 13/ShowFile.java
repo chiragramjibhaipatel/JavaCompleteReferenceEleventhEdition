@@ -6,7 +6,14 @@ public class ShowFile{
 			System.out.println("Usage: java ShowFile <filename>");
 			return;
 		}
-		try(var fin = new FileInputStream(args[0])){
+		final FileInputStream fin;
+		try{
+			fin = new FileInputStream(args[0]);
+		} catch (IOException e){
+			System.out.println("Error while opening file");
+			return;
+		}
+		try(fin){
 			int i;
 		
 			do{
