@@ -5,12 +5,10 @@ class MyClass{
 		a = j;
 	}
 	MyClass(int i){
-		a = i;
-		b = i;
+		this(i, i);
 	}
 	MyClass(){
-		a = 0;
-		b = 0;
+		this(0);
 	}
 
 	public static void main(String[] args){
