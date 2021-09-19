@@ -1,23 +1,27 @@
 class HierDemo{
 	public static void main(String[] args){
-		Gen2<Integer> iOb = new Gen2<>(3);	
+		Gen2<Integer, String> iOb = new Gen2<>(3, "message");	
 		iOb.showValue();	
 	}
 }
 
-class Gen{
-	int val;
-	Gen(int v){
+class Gen<T>{
+	T val;
+	Gen(T v){
 		val = v;
 	}
-	Gen(){}
+	void showValue(){
+		System.out.println("(in super class)Value of val is: " + val);
+	}
 }
-class Gen2<T> extends Gen{
-	T ob;
-	Gen2(T o){
-		ob = o;
+class Gen2<T, V> extends Gen<T>{
+	V ob;
+	Gen2(T o, V v){
+		super(o);
+		ob = v;
 	}
 	void showValue(){
-		System.out.println("Value of ob is: " + ob);
+		super.showValue();
+		System.out.println("(in sub class)Value of ob is: " + ob);
 	}
 }
