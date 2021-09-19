@@ -5,20 +5,19 @@ class HierDemo{
 	}
 }
 
-class Gen<T>{
+class Gen{
+	int val;
+	Gen(int v){
+		val = v;
+	}
+	Gen(){}
+}
+class Gen2<T> extends Gen{
 	T ob;
-	Gen(T o){
+	Gen2(T o){
 		ob = o;
 	}
-	public void showValue(){
+	void showValue(){
 		System.out.println("Value of ob is: " + ob);
-	}
-	T getObj(){
-		return ob;
-	}
-}
-class Gen2<T> extends Gen<T>{
-	Gen2(T o){
-		super(o);
 	}
 }
